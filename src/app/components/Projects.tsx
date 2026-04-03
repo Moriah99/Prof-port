@@ -43,8 +43,7 @@ export function Projects() {
         "Large dataset management with performance optimization",
         "Data migration and transformation between different formats"
       ],
-      impact: "Streamlined data entry processes by 70%, improved data accuracy, and created efficient spreadsheet systems for business operations",
-      link: "https://docs.google.com/spreadsheets/d/1PpJCie-tZhGASQj1_nZm2TJa9YSqUzqeUKniwn6BtJ8/edit?gid=514603181#gid=514603181"
+      impact: "Streamlined data entry processes by 70%, improved data accuracy, and created efficient spreadsheet systems for business operations"
     }
   ];
 
@@ -106,15 +105,17 @@ export function Projects() {
                 </p>
               </div>
 
-              <a 
-                href={project.link}
-                target={project.link.startsWith('http') ? '_blank' : '_self'}
-                rel={project.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors group-hover:shadow-lg"
-              >
-                View Project
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              {project.link && (
+                <a 
+                  href={project.link}
+                  target={project.link.startsWith('http') ? '_blank' : '_self'}
+                  rel={project.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors group-hover:shadow-lg"
+                >
+                  View Project
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
             </div>
           ))}
         </div>
